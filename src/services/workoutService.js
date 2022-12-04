@@ -4,11 +4,12 @@ const Workout = require("../database/Workout");
 const getAllWorkouts = () => {
     const allWorkouts = Workout.getAllWorkouts();
     return allWorkouts;
-}
+};
 
-const getOneWorkout = () => {
-    return;
-}
+const getOneWorkout = (workoutId) => {
+    const workout = Workout.getOneWorkout(workoutId);
+    return workout;
+};
 
 const createNewWorkout = (newWorkout) => {
     const workoutToInsert = {
@@ -21,13 +22,14 @@ const createNewWorkout = (newWorkout) => {
     return createdWorkout;
 };
 
-const updateOneWorkout = () => {
-    return;
-}
+const updateOneWorkout = (workoutId, changes) => {
+    const updatedWorkout = Workout.updateOneWorkout(workoutId, changes);
+    return updatedWorkout;
+};
 
-const deleteOneWorkout = () => {
-    return;
-}
+const deleteOneWorkout = (workoutId) => {
+    Workout.deleteOneWorkout(workoutId);
+};
 
 module.exports = {
     getAllWorkouts,
